@@ -9,13 +9,13 @@ import java.util.concurrent.TimeUnit;
 public class Crawler {
     int threadscount;
     Dbhandler dbhand = new Dbhandler();
-   long initial;
+   
     Crawler(int tc)
     {
         threadscount = tc;
         Vector<String> seeds=Helper.readFromFile("websites.txt");
         Dbhandler dbhandler=new Dbhandler();
-       initial=dbhand.getCount();
+       
         for(int i=0;i<seeds.size();++i)
         {
             try {
@@ -48,7 +48,7 @@ public class Crawler {
             getLinks=true;
             long  count=dbhand.getCount();
             System.out.println(count);
-            if(count>5000+initial) {
+            if(count>5000) {
                 getLinks = false;
 
             }
@@ -64,7 +64,7 @@ public class Crawler {
             }
         }
 
-        if (dbhand.getDownloadedCount() < 5000+initial)
+        if (dbhand.getDownloadedCount() < 5000)
         {
             crawl();
         }
