@@ -12,7 +12,7 @@ import java.sql.Statement;
 public class IndexerDbhandler {
     private static String jdbcDriver = "com.mysql.jdbc.Driver";
     private static String dbAddress = "jdbc:mysql://localhost:3306/";
-    private static String dbName = "testdata";
+    private static String dbName = "SearchEngine";
     private static String userName = "root";
     private static String password = "root";
 
